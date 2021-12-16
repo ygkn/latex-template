@@ -7,7 +7,7 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "editor.formatOnSave": true,
     "[latex]": {
-      "editor.defaultFormatter": "James-Yu.latex-workshop"
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
     "latex-workshop.latex.outDir": "out",
     "latex-workshop.latex.recipes": [
@@ -30,4 +30,3 @@
         },
     ],
 }
-
