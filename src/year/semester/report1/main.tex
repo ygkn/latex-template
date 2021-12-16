@@ -1,0 +1,92 @@
+\documentclass[a4paper, 12pt, uplatex]{jsarticle}
+
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{thmtools}
+\usepackage{bm}
+\usepackage[margin=1cm, includefoot]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{xcolor}
+
+\usepackage[hyphens]{url}
+\usepackage{url}
+
+\usepackage{float}
+\usepackage[dvipdfmx]{hyperref, graphicx}
+\usepackage{pxjahyper}
+\hypersetup{
+	colorlinks=false, % リンクに色をつけない設定
+	bookmarks=true, % 以下ブックマークに関する設定
+	bookmarksnumbered=true,
+	pdfborder={0 0 0},
+	bookmarkstype=toc,
+}
+\newcommand{\linedhref}[2]{\underline{\href{#1}{\emph{#2}}}}
+
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries\sffamily,
+  notefont=\bfseries\sffamily,
+  notebraces={（}{）},
+  postheadspace=1em,
+  numbered=no,
+  qed=\(\square\)
+]{myproof}
+\declaretheorem[title=証明, style=myproof]{myproof}
+\renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
+
+\usepackage{minted}
+\renewcommand{\listingscaption}{ソースコード}
+\usemintedstyle{monokai}
+\definecolor{monokaibg}{HTML}{282828}
+\setminted{bgcolor=monokaibg}
+\definecolor{Text}{HTML}{F8F8F2}
+\AtBeginEnvironment{minted}{\color{Text}}
+
+
+\author{0000000000-0 \\ ygkn}
+\title{\LaTeX のテスト\\第1回 レポート課題 \LaTeX のテスト}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+
+画像のサンプルを，図 \ref{fig:image} に示す．
+JavaScript で \texttt{console.log} 関数 \cite{consolel20:online} を呼び出す，
+ソースコードのサンプルを，ソースコード \ref{lst:js} に示す．
+
+ちなみに運動方程式は，
+\[
+  F=ma
+\]
+である．
+
+
+こんにちわ．TextLint のサンプルです。
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.25\linewidth]{image.jpg}
+  \end{center}
+  \caption{画像のサンプル}
+  \label{fig:image}
+\end{figure}
+
+\begin{listing}[ht]
+  \begin{minted}{js}
+console.log("こんにちは！");
+  \end{minted}
+  \caption{ソースコードのサンプル}
+  \label{lst:js}
+\end{listing}
+
+
+\bibliography{bib}
+\bibliographystyle{junsrt}
+
+\end{document}
