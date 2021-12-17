@@ -9,9 +9,17 @@ ARG GID=${UID}
 
 WORKDIR /workdir
 
-ENV PATH /usr/local/bin/texlive:$PATH
+# Install TeXLive from paperist/texlive-ja:latest
 
 COPY --from=texlive-ja /usr/local/texlive /usr/local/texlive
+RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
+ENV PATH /usr/local/bin/texlive:$PATH
+
+# Install latexindent
+RUN tlmgr install latexindent
+RUN cpanm Log::Log4perl Log::Dispatch::File YAML::Tiny File::HomeDir Unicode::GCString
+
+# Install packages
 
 RUN apt-get update \
     && apt-get install -y \
@@ -25,13 +33,7 @@ RUN apt-get update \
     python3-pygments \
     wget
 
-
-RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
-
-RUN tlmgr install latexindent
-RUN cpanm Log::Log4perl Log::Dispatch::File YAML::Tiny File::HomeDir Unicode::GCString
-
-RUN echo ${USERNAME} ${GID} ${UID}
+# Setting user
 
 RUN userdel node \
     && groupadd --gid ${GID} ${USERNAME} \
@@ -39,6 +41,8 @@ RUN userdel node \
 
 
 USER ${USERNAME}
+
+# Install .latexmkrc
 
 COPY .latexmkrc /home/${USERNAME}
 
