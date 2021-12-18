@@ -10,9 +10,15 @@ Visual Studio Code Remote - Containers で TextLint を使用して LaTeX でレ
 
 ### 準備
 
+#### このテンプレートを使用する
+
 1. [このテンプレートからリポジトリを作成する](https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 2. 作成したリポジトリを clone する
 3. VS Code で開き、**Remote-Containers: Open Folder in Container...** をコマンドパレットから実行する
+
+#### 既存の LaTeX プロジェクトに使う
+
+`.git` やサンプル (`report1` フォルダ) 以外を除いた、設定ファイルをコピーしてください。
 
 ### コンパイル
 
