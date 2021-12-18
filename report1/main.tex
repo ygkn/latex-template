@@ -47,35 +47,54 @@
 \AtBeginEnvironment{minted}{\color{Text}}
 
 
-\author{0000000000-0 \\ ygkn}
-\title{\LaTeX のテスト\\第1回 レポート課題 \LaTeX のテスト}
+\author{0000000000-0 \\ レポート 太郎}
+\title{\LaTeX 実践1\\第1回\\レポート課題 \LaTeX のサンプル}
 \date{}
 
 \begin{document}
 
 \maketitle
 
+\begin{abstract}
+  このレポートは，\LaTeX でレポートを書くサンプルである．
+\end{abstract}
+
+\section{背景}
+レポートを \LaTeX で書こう．
+
+\section{サンプル}
+
+\subsection{段落}
+
+行を開けると，段落になる．
+
+山路を登りながら．
+
+\subsection{数式}
+Albert Einstein の特殊相対論によれば，エネルギー \(E\) と質量 \(m\) は
+\[
+  E = mc^{2}
+\]
+で関係づけられる．
+
+\subsection{画像}
+
 
 画像のサンプルを，図 \ref{fig:image} に示す．
-JavaScript で \texttt{console.log} 関数 \cite{consolel20:online} を呼び出す，
-ソースコードのサンプルを，ソースコード \ref{lst:js} に示す．
-
-ちなみに運動方程式は，
-\[
-  F=ma
-\]
-である．
-
-
-こんにちわ．TextLint のサンプルです。
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=0.25\linewidth]{image.jpg}
+    \includegraphics[width=0.4\linewidth]{image.png}
   \end{center}
   \caption{画像のサンプル}
   \label{fig:image}
 \end{figure}
+
+\subsection{ソースコード}
+
+JavaScript で \texttt{console.log} 関数 \cite{consolel20:online} を呼び出す，
+ソースコードのサンプルを，ソースコード \ref{lst:js} に示す．
+
 
 \begin{listing}[ht]
   \begin{minted}{js}
@@ -84,6 +103,12 @@ console.log("こんにちは！");
   \caption{ソースコードのサンプル}
   \label{lst:js}
 \end{listing}
+
+\subsection{TextLint}
+
+次の段落は，TextLint によってエラーとなる．
+
+こんにちわ．TextLint のサンプルです。
 
 
 \bibliography{bib}
