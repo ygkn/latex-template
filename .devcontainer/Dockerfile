@@ -15,10 +15,6 @@ COPY --from=texlive-ja /usr/local/texlive /usr/local/texlive
 RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
 ENV PATH /usr/local/bin/texlive:$PATH
 
-# Install latexindent
-RUN tlmgr install latexindent
-RUN cpanm Log::Log4perl Log::Dispatch::File YAML::Tiny File::HomeDir Unicode::GCString
-
 # Install packages
 
 RUN apt-get update \
@@ -32,6 +28,10 @@ RUN apt-get update \
     locales \
     python3-pygments \
     wget
+
+# Install latexindent
+RUN tlmgr install latexindent
+RUN cpanm Log::Log4perl Log::Dispatch::File YAML::Tiny File::HomeDir Unicode::GCString
 
 # Setting user
 
