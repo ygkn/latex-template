@@ -6,5 +6,6 @@
     "james-yu.latex-workshop",
     "taichi.vscode-textlint",
     "tecosaur.latex-utilities"
-  ]
+  ],
+  "postCreateCommand": "yarn install",
 }
