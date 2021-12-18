@@ -2,7 +2,9 @@
 
 ぼくのかんがえたさいきょうの LaTeX 環境
 
-LaTeX でレポートなどを書くことを想定したテンプレートです。
+Visual Studio Code Remote - Containers で TextLint を使用して LaTeX でレポートなどを書くことを想定したテンプレートです。
+
+![スクリーンショット](screenshot.png)
 
 ## 使用方法
 
