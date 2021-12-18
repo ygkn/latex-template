@@ -22,7 +22,6 @@
             "name": "latexmk",
             "command": "latexmk",
             "args": [
-                "-silent",
                 "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
